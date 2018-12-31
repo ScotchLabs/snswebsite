@@ -278,11 +278,14 @@
 				    var index = 0;
 				 
 				    var imgs = ['url("assets/css/images/light-bl.svg"), url("assets/css/images/light-br.svg"), url("assets/css/images/overlay.png"), url("images/show.jpg")', 'url("assets/css/images/light-bl.svg"), url("assets/css/images/light-br.svg"), url("assets/css/images/overlay.png"), url("images/members.jpg")', 'url("assets/css/images/light-bl.svg"), url("assets/css/images/light-br.svg"), url("assets/css/images/overlay.png"), url("images/prod3.jpg")'];
+
+				    var pos = ["bottom left, bottom right, top left, center center", "bottom left, bottom right, top left, top center", "bottom left, bottom right, top left, bottom center"]
 				 
 				    setInterval(function () {
 				        // Get the next index.  If at end, restart to the beginning.
 				        index = index + 1 < imgs.length ? index + 1 : 0;
 				        document.getElementById("banner").style["background-image"] = imgs[index]
+				        document.getElementById("banner").style["background-position"] = pos[index]
 				    }, 3000);
 				};
 				 
