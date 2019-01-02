@@ -1910,7 +1910,7 @@ input, select, textarea {
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			/*Commented out for compatibility with new FA 5*/
+			/*Commented out for FA5 compatibility*/
 			/*font-family: FontAwesome;*/
 			font-style: normal;
 			/*font-weight: normal;*/
@@ -2394,9 +2394,10 @@ input, select, textarea {
 						#header nav ul li.submenu > a:before {
 							-moz-osx-font-smoothing: grayscale;
 							-webkit-font-smoothing: antialiased;
-							font-family: FontAwesome;
+							/*edited family and weight for FA5 compatibility*/
+							font-family: "Font Awesome 5 Free";
 							font-style: normal;
-							font-weight: normal;
+							font-weight: 900;
 							text-transform: none !important;
 						}
 
@@ -3069,15 +3070,16 @@ input, select, textarea {
 					#navButton .toggle:before {
 						-moz-osx-font-smoothing: grayscale;
 						-webkit-font-smoothing: antialiased;
-						font-family: FontAwesome;
+						/*edited family and weight for FA5 compatibility*/
+						font-family: "Font Awesome 5 Free";
 						font-style: normal;
-						font-weight: normal;
+						font-weight: 900;
 						text-transform: none !important;
 					}
 
 					#navButton .toggle:before {
 						color: #fff;
-						content: '\f0c9';
+						content: '\f0c9'; /*fa-bars*/
 						font-size: 1em;
 						height: 40px;
 						left: 10px;
