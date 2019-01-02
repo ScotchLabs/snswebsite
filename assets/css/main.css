@@ -128,6 +128,13 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
+	.about >p:nth-of-type(1):first-letter{
+		font-size:3.3em;
+		font-weight:600;
+		margin: 0.2em 0.2em 0.1em 0em;
+		float: left;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		color: inherit;
 		font-weight: 300;
@@ -1851,7 +1858,7 @@ input, select, textarea {
 		position: relative;
 	}
 
-		.image:before {
+		/*.image:before {
 			background: url("images/overlay.png");
 			content: '';
 			height: 100%;
@@ -1859,7 +1866,7 @@ input, select, textarea {
 			position: absolute;
 			top: 0;
 			width: 100%;
-		}
+		}*/
 
 		.image.fit {
 			display: block;
@@ -1878,6 +1885,19 @@ input, select, textarea {
 			.image.featured img {
 				display: block;
 				width: 100%;
+			}
+
+		.image.grid {
+			display: block;
+			margin: 0 0 2em 0;
+		}
+
+			.image.grid img {
+				display: block;
+				width: 75%;
+				margin: auto;
+				border: 3px solid #ec4700;
+				border-radius: 25%;
 			}
 
 /* Icon */
@@ -1934,6 +1954,24 @@ input, select, textarea {
 
 				.icon.circle.fa-facebook:hover {
 					background: #829bc9;
+				}
+
+			.icon.circle.fa-instagram {
+				background: #c1558b;
+				color: #fff;
+			}
+
+				.icon.circle.fa-instagram:hover {
+					background: #c76696;
+				}
+
+			.icon.circle.fa-youtube-play {
+				background: #d71500;
+				color: #fff;
+			}
+
+				.icon.circle.fa-youtube-play:hover {
+					background: #de412f;
 				}
 
 			.icon.circle.fa-google-plus {
@@ -2821,6 +2859,12 @@ input, select, textarea {
 					padding: 2.5em;
 				}
 
+		/* Grid */
+
+			.wrapper.grid br {
+				display: inline;
+			}
+
 		/* Banner */
 
 			#banner {
@@ -3275,6 +3319,16 @@ input, select, textarea {
 					background-size: 10em;
 					padding: 1.5em 1.5em 3em 1.5em;
 				}
+
+		/* Grid */
+
+			.wrapper.grid br {
+				display: inline;
+			}
+
+			.wrapper.grid p {
+				text-align: center;
+			}
 
 		/* Banner */
 
