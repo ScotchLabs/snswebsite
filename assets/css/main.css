@@ -2503,33 +2503,13 @@ input, select, textarea {
 		}
 	}
 
-	/*#banner {
-		background-attachment: scroll, scroll, scroll, fixed;
+	#banner {
+		/*background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
 		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/show.jpg");
 		background-position: bottom left, bottom right, top left, top center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
-		background-size: 25em, 25em, auto, cover;
-		color: #fff;
-		cursor: default;
-		padding: 6em 0;
-		text-align: center;
-	}*/
-
-	#banner {
-		background-attachment: scroll, scroll, scroll, fixed;
-		background-color: #645862;
-		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/show.jpg");
-		background-position: bottom left, bottom right, top left, center center;
-		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
-		background-size: 25em, 25em, auto, cover;
-		color: #fff;
-		cursor: default;
-		padding: 6em 0;
-		text-align: center;
-	}
-
-	/*#banner {
+		background-size: 25em, 25em, auto, cover;*/
 		color: #fff;
 		cursor: default;
 		padding: 6em 0;
@@ -2538,19 +2518,35 @@ input, select, textarea {
 
 		#banner .slide {
 			position: absolute;
-			width: 100%;
 			top: 0;
-			left: 0;
-			height: 100%;
-			transition: opacity 1s ease-in-out;
-			opacity: 1;
+			width: 100%;
 			background-attachment: scroll, scroll, scroll, fixed;
 			background-color: #645862;
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/show.jpg");
 			background-position: bottom left, bottom right, top left, top center;
 			background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 			background-size: 25em, 25em, auto, cover;
-		}*/
+			transition: opacity 1s ease-in-out;
+			opacity: 0;
+		}
+
+		#banner .slide.slide1 {
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/show.jpg");
+			background-position: bottom left, bottom right, top left, center center;
+		}
+
+		#banner .slide.slide2 {
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/members.jpg");
+			background-position: bottom left, bottom right, top left, top center;
+		}
+
+		#banner .slide.slide3 {
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/prod.jpg");
+			background-position: bottom left, bottom right, top left, bottom center;
+		}
+
+		#banner .slide.show {
+			opacity: 1;
+		}
 
 		#banner .inner {
 			-moz-animation: reveal-banner 1s 0.25s ease-in-out;
@@ -2752,6 +2748,10 @@ input, select, textarea {
 				background-attachment: scroll;
 			}
 
+				#banner .slide {
+					background-attachment: scroll;
+				}
+
 		/* CTA */
 
 			#cta {
@@ -2826,6 +2826,10 @@ input, select, textarea {
 			#banner {
 				background-size: 15em, 15em, auto, cover;
 			}
+
+				#banner .slide{
+					background-size: 15em, 15em, auto, cover;
+				}
 
 		/* Main */
 
@@ -3278,6 +3282,10 @@ input, select, textarea {
 				background-size: 10em, 10em, auto, cover;
 				padding: 6em 0;
 			}
+
+				#banner .slide {
+					background-size: 10em, 10em, auto, cover;
+				}
 
 				#banner .inner {
 					background: none;
