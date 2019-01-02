@@ -1,4 +1,4 @@
-@import url("font-awesome.min.css");
+/*@import url("font-awesome.min.css");*/
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,900");
 
 /*
@@ -1774,7 +1774,7 @@ input, select, textarea {
 			left: 0;
 			position: absolute;
 			text-align: center;
-			top: 1em;
+			top: 0.5em; /*edited for FA5*/
 			width: 100%;
 		}
 
@@ -1910,9 +1910,10 @@ input, select, textarea {
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			/*Commented out for compatibility with new FA 5*/
+			/*font-family: FontAwesome;*/
 			font-style: normal;
-			font-weight: normal;
+			/*font-weight: normal;*/
 			text-transform: none !important;
 		}
 
@@ -1947,12 +1948,12 @@ input, select, textarea {
 					background: #7fb7d2;
 				}
 
-			.icon.circle.fa-facebook {
+			.icon.circle.fa-facebook-f {
 				background: #7490c3;
 				color: #fff;
 			}
 
-				.icon.circle.fa-facebook:hover {
+				.icon.circle.fa-facebook-f:hover {
 					background: #829bc9;
 				}
 
@@ -1965,12 +1966,12 @@ input, select, textarea {
 					background: #c76696;
 				}
 
-			.icon.circle.fa-youtube-play {
+			.icon.circle.fa-youtube {
 				background: #d71500;
 				color: #fff;
 			}
 
-				.icon.circle.fa-youtube-play:hover {
+				.icon.circle.fa-youtube:hover {
 					background: #de412f;
 				}
 
