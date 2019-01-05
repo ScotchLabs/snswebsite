@@ -135,6 +135,10 @@ input, select, textarea {
 		float: left;
 	}
 
+	.centered {
+		text-align: center;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		color: inherit;
 		font-weight: 300;
@@ -3220,6 +3224,10 @@ input, select, textarea {
 
 			p {
 				text-align: justify;
+			}
+
+			.centered p {
+				text-align: center;
 			}
 
 		/* Section/Article */
