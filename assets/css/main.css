@@ -111,7 +111,7 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-		color: #9b659c;
+		color: #9b009c;
 		text-decoration: none;
 		border-bottom: dotted 1px;
 	}
@@ -1795,6 +1795,19 @@ input, select, textarea {
 		padding-top: 3em;
 	}
 
+/* Big Headings */
+
+	section.bigheading h2,
+	section.bigheading h3,
+	section.bigheading h4 {
+		font-weight: 600;
+	}
+
+	section.bigheading h2,
+	section.bigheading h3 {
+		color: #9b659c;
+	}
+
 /* Form */
 
 	input[type="text"],
@@ -2194,8 +2207,8 @@ input, select, textarea {
 		input[type="reset"].primary,
 		button.primary,
 		.button.primary {
-			background: #9b659c;
-			border-color: #9b659c;
+			background: #9b009c;
+			border-color: #9b009c;
 			color: #fff !important;
 		}
 
@@ -2204,8 +2217,8 @@ input, select, textarea {
 			input[type="reset"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background: #a574a5 !important;
-				border-color: #a574a5 !important;
+				background: #af32af !important;
+				border-color: #af32af !important;
 			}
 
 		input[type="button"].fit,
@@ -2497,7 +2510,7 @@ input, select, textarea {
 			}
 
 			.dropotron > li:hover > a {
-				background: #9b659c;
+				background: #9b009c;
 				color: #fff;
 			}
 
