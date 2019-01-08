@@ -253,6 +253,15 @@
             <script src="assets/js/main.js"></script>
 
             <script type="text/javascript">
+                // This is an imperfect solution to implement the slideshow.
+                // Basically, this will set the heights of all the slides to
+                // the height of the banner section when the page is loaded.
+                // There doesn't seem to be a better way to set the heights
+                // of the slides since the banner section expands flexibly to
+                // fit the contents of the inner section, but the slide divs
+                // do not. Also, the heights will be set again every time the
+                // slide changes in case the user rotates their device or
+                // otherwise changes the width of their screen.
                 function setHeights() {
                     var slides = document.getElementsByClassName("slide");
                     var h = $("#banner").innerHeight();
