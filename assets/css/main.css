@@ -111,7 +111,7 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-		color: #9b009c;
+		color: #9b329c;
 		text-decoration: none;
 		border-bottom: dotted 1px;
 	}
@@ -2207,8 +2207,8 @@ input, select, textarea {
 		input[type="reset"].primary,
 		button.primary,
 		.button.primary {
-			background: #9b009c;
-			border-color: #9b009c;
+			background: #9b329c;
+			border-color: #9b329c;
 			color: #fff !important;
 		}
 
@@ -2217,8 +2217,8 @@ input, select, textarea {
 			input[type="reset"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background: #af32af !important;
-				border-color: #af32af !important;
+				background: #a546a5 !important;
+				border-color: #a546a5 !important;
 			}
 
 		input[type="button"].fit,
@@ -2510,7 +2510,7 @@ input, select, textarea {
 			}
 
 			.dropotron > li:hover > a {
-				background: #9b009c;
+				background: #9b329c;
 				color: #fff;
 			}
 
