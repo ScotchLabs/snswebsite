@@ -1797,15 +1797,13 @@ input, select, textarea {
 
 /* Big Headings */
 
-	section.bigheading h2,
-	section.bigheading h3,
-	section.bigheading h4 {
+	section.boldhead h1,
+	section.boldhead h2,
+	section.boldhead h3,
+	section.boldhead h4,
+	section.boldhead h5,
+	section.boldhead h6 {
 		font-weight: 600;
-	}
-
-	section.bigheading h2,
-	section.bigheading h3 {
-		color: #9b659c;
 	}
 
 /* Form */
@@ -1916,6 +1914,24 @@ input, select, textarea {
 				border: 3px solid #9b659c;
 				border-radius: 25%;
 			}
+
+	a.image {
+		overflow: hidden;
+	}
+
+		a.image img {
+			-moz-transition: -moz-transform 0.2s ease-out;
+			-webkit-transition: -webkit-transform 0.2s ease-out;
+			-ms-transition: -ms-transform 0.2s ease-out;
+			transition: transform 0.2s ease-out;
+		}
+
+		a.image:hover img {
+			-moz-transform: scale(1.05);
+			-webkit-transform: scale(1.05);
+			-ms-transform: scale(1.05);
+			transform: scale(1.05);
+		}
 
 /* Icon */
 
