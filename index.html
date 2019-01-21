@@ -227,9 +227,11 @@
                     $slides = $('#banner .slide');
                     setInterval(function () {
                         setHeights();
-                        index = (index + 1) % $slides.length;
-                        $slides.eq(index).addClass('show');
-                        $slides.eq(index - 1).removeClass('show');
+                        if ($slides.length > 1) {
+                            index = (index + 1) % $slides.length;
+                            $slides.eq(index).addClass('show');
+                            $slides.eq(index - 1).removeClass('show');
+                        }
                     }, 4000);
                 };
 
