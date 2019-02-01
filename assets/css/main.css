@@ -1795,15 +1795,30 @@ input, select, textarea {
 		padding-top: 3em;
 	}
 
-/* Big Headings */
+/* Special Headings */
 
-	section.boldhead h1,
-	section.boldhead h2,
-	section.boldhead h3,
-	section.boldhead h4,
-	section.boldhead h5,
-	section.boldhead h6 {
-		font-weight: 600;
+	.boldhead h1,
+	.boldhead h2,
+	.boldhead h3,
+	.boldhead h4,
+	.boldhead h5,
+	.boldhead h6 {
+		font-weight: 400;
+	}
+
+	.colorhead h1,
+	.colorhead h2,
+	.colorhead h3,
+	.colorhead h4,
+	.colorhead h5,
+	.colorhead h6 {
+		color: #9b659c;
+	}
+
+/* Grid List */
+
+	.grid-list ul {
+		margin-bottom: 0;
 	}
 
 /* Form */
