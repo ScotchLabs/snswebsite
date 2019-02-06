@@ -304,6 +304,14 @@ input, select, textarea {
 			order: -1;
 		}
 
+		.row > .col-0 {
+			display: none;
+		}
+
+		.row > .off-0 {
+			margin-left: 0;
+		}
+
 		.row > .col-1 {
 			width: 8.3333333333%;
 		}
@@ -545,6 +553,14 @@ input, select, textarea {
 
 				.row > .imp-wide {
 					order: -1;
+				}
+
+				.row > .col-0-wide {
+					display: none;
+				}
+
+				.row > .off-0-wide {
+					margin-left: 0;
 				}
 
 				.row > .col-1-wide {
@@ -792,6 +808,14 @@ input, select, textarea {
 					order: -1;
 				}
 
+				.row > .col-0-normal {
+					display: none;
+				}
+
+				.row > .off-0-normal {
+					margin-left: 0;
+				}
+
 				.row > .col-1-normal {
 					width: 8.3333333333%;
 				}
@@ -1035,6 +1059,14 @@ input, select, textarea {
 
 				.row > .imp-narrow {
 					order: -1;
+				}
+
+				.row > .col-0-narrow {
+					display: none;
+				}
+
+				.row > .off-0-narrow {
+					margin-left: 0;
 				}
 
 				.row > .col-1-narrow {
@@ -1282,6 +1314,14 @@ input, select, textarea {
 					order: -1;
 				}
 
+				.row > .col-0-narrower {
+					display: none;
+				}
+
+				.row > .off-0-narrower {
+					margin-left: 0;
+				}
+
 				.row > .col-1-narrower {
 					width: 8.3333333333%;
 				}
@@ -1525,6 +1565,14 @@ input, select, textarea {
 
 				.row > .imp-mobile {
 					order: -1;
+				}
+
+				.row > .col-0-mobile {
+					display: none;
+				}
+
+				.row > .off-0-mobile {
+					margin-left: 0;
 				}
 
 				.row > .col-1-mobile {
