@@ -2245,7 +2245,7 @@ input, select, textarea {
 	input[type="button"],
 	input[type="submit"],
 	input[type="reset"],
-	button,
+	/*button,*/ /* Conflict with fancybox */
 	.button {
 		-moz-appearance: none;
 		-webkit-appearance: none;
