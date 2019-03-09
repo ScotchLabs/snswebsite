@@ -150,15 +150,20 @@ input, select, textarea {
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
 			text-decoration: none;
+		}
+
+		h1 a, h2 a, h3 a, h6 a {
+			color: inherit;
+			text-decoration: none;
 			border: 0;
 		}
 
-	h2 {
+	h2, h4 {
 		font-size: 1.5em;
 		letter-spacing: 0.1em;
 	}
 
-	h3 {
+	h3, h5 {
 		font-size: 1.15em;
 		letter-spacing: 0.025em;
 	}
@@ -1811,11 +1816,13 @@ input, select, textarea {
 			right: 0;
 		}
 
-		header.special h2 {
+		header.special h2,
+		header.special h4 {
 			margin-bottom: 0;
 		}
 
-		header.special h2 + p {
+		header.special h2 + p,
+		header.special h4 + p {
 			margin-bottom: 0;
 			padding-top: 1.5em;
 		}
@@ -1955,6 +1962,28 @@ input, select, textarea {
 				width: 100%;
 			}
 
+		.image.poster {
+			display: block;
+		}
+
+			.image.poster img {
+				display: block;
+				width: 100%;
+				height: 387px;
+				object-fit: cover;
+			}
+
+		.image.gallery {
+			display: block;
+		}
+
+			.image.gallery img {
+				display: block;
+				width: 100%;
+				height: 181px;
+				object-fit: cover;
+			}
+
 		.image.featured {
 			display: block;
 			margin: 0 0 2em 0;
@@ -1994,6 +2023,66 @@ input, select, textarea {
 			-webkit-transform: scale(1.05);
 			-ms-transform: scale(1.05);
 			transform: scale(1.05);
+		}
+
+		@media screen and (max-width: 1680px) {
+
+			.image.poster img {
+				height: 330px;
+			}
+
+			.image.gallery img {
+				height: 155px;
+			}
+
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			.image.poster img {
+				height: 263px;
+			}
+
+			.image.gallery img {
+				height: 121.5px;
+			}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.image.poster img {
+				height: 235px;
+			}
+
+			.image.gallery img {
+				height: 110px;
+			}
+
+		}
+
+		@media screen and (max-width: 840px) {
+
+			.image.poster img {
+				height: 325px;
+			}
+
+			.image.gallery img {
+				height: 155px;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			.image.poster img {
+				height: 175px;
+			}
+
+			.image.gallery img {
+				height: 80px;
+			}
+
 		}
 
 /* Icon */
@@ -3015,7 +3104,8 @@ input, select, textarea {
 					width: 40%;
 				}
 
-				header.special h2 + p {
+				header.special h2 + p,
+				header.special h4 + p {
 					padding-top: 1.25em;
 				}
 
@@ -3304,12 +3394,12 @@ input, select, textarea {
 				min-width: 320px;
 			}
 
-			h2 {
+			h2, h4 {
 				font-size: 1.25em;
 				letter-spacing: 0.1em;
 			}
 
-			h3 {
+			h3, h5 {
 				font-size: 1em;
 				letter-spacing: 0.025em;
 			}
