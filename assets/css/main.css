@@ -1850,6 +1850,12 @@ input, select, textarea {
 		padding-top: 3em;
 	}
 
+/* Justified Paragraphs */
+
+	section.justify p {
+		text-align: justify;
+	}
+
 /* Special Headings */
 
 	.boldhead h1,
