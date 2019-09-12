@@ -2777,12 +2777,12 @@ input, select, textarea {
 
 		#banner .slide.slide4 {
 			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/feb.jpg");
-			background-position: bottom left, bottom right, top left, 90% center;
+			background-position: bottom left, bottom right, top left, 82% center;
 		}
 
 		#banner .slide.slide5 {
 			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/carnival.jpg");
-			background-position: bottom left, bottom right, top left, 90% center;
+			background-position: bottom left, bottom right, top left, 50% center;
 		}
 
 		#banner .slide.slide6 {
