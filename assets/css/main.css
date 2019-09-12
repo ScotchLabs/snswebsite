@@ -2761,17 +2761,32 @@ input, select, textarea {
 		}
 
 		#banner .slide.slide1 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/show.jpg");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/october.jpg");
 			background-position: bottom left, bottom right, top left, 82% center;
 		}
 
 		#banner .slide.slide2 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/welcome.jpg");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/show.jpg");
 			background-position: bottom left, bottom right, top left, top center;
 		}
 
 		#banner .slide.slide3 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/family.jpg");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/npp.jpg");
+			background-position: bottom left, bottom right, top left, bottom center;
+		}
+
+		#banner .slide.slide4 {
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/feb.jpg");
+			background-position: bottom left, bottom right, top left, bottom center;
+		}
+
+		#banner .slide.slide5 {
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/carnival.jpg");
+			background-position: bottom left, bottom right, top left, bottom center;
+		}
+
+		#banner .slide.slide6 {
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/may.jpg");
 			background-position: bottom left, bottom right, top left, bottom center;
 		}
 
