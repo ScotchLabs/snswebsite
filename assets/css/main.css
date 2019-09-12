@@ -2762,7 +2762,7 @@ input, select, textarea {
 
 		#banner .slide.slide1 {
 			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/october.JPG");
-			background-position: bottom left, bottom right, top left, top center;
+			background-position: bottom left, bottom right, top left, 90% center;
 		}
 
 		#banner .slide.slide2 {
@@ -2782,7 +2782,7 @@ input, select, textarea {
 
 		#banner .slide.slide5 {
 			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/carnival.jpg");
-			background-position: bottom left, bottom right, top left, bottom center;
+			background-position: bottom left, bottom right, top left, 90% center;
 		}
 
 		#banner .slide.slide6 {
