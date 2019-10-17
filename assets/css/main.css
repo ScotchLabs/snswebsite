@@ -192,6 +192,10 @@ input, select, textarea {
 		padding: 1em 0 1em 2em;
 	}
 
+    h2.title {
+        margin-bottom: .25em;
+    }
+
 /* Container */
 
 	.container {
@@ -2282,15 +2286,18 @@ input, select, textarea {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+        
 	}
 
-		ul.buttons:last-child {
+		ul.buttons li:last-child {
 			margin-bottom: 0;
+            
 		}
 
 		ul.buttons li {
 			display: inline-block;
 			padding: 0 0 0 1.5em;
+            margin-bottom: 1.5em;
 		}
 
 			ul.buttons li:first-child {
