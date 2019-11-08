@@ -2366,7 +2366,7 @@ input, select, textarea {
 		font-size: 0.8em;
 		font-weight: 900;
 		letter-spacing: 2px;
-		min-width: 12em;
+		min-width: 20em;
 		padding: 0 0.75em;
 		line-height: 3.75em;
 		text-align: center;
