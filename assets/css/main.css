@@ -2769,12 +2769,12 @@ input, select, textarea {
 		}
 
 		#banner .slide.slide1 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/october.JPG");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/october_19.jpg");
 			background-position: bottom left, bottom right, top left, 90% center;
 		}
 
 		#banner .slide.slide2 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/show.jpg");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/december_19.jpg");
 			background-position: bottom left, bottom right, top left, 82% center;
 		}
 
@@ -2784,7 +2784,7 @@ input, select, textarea {
 		}
 
 		#banner .slide.slide4 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/feb.jpg");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/feb_20.jpg");
 			background-position: bottom left, bottom right, top left, 75% center;
 		}
 
