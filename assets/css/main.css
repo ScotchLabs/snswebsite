@@ -2775,7 +2775,7 @@ input, select, textarea {
 
 		#banner .slide.slide2 {
 			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/december_19.jpg");
-			background-position: bottom left, bottom right, top left, 100% center;
+			background-position: bottom left, bottom right, top left, top center;
 		}
 
 		#banner .slide.slide3 {
