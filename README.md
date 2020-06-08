@@ -15,6 +15,7 @@ The current static site at snstheatre.org
 Working on a new page that will include all the show roles documentation (director, PM, SM, MD).
 
 ### galleries
+- (merged) created a sample gallery page that will be used as a template for the rest
 - making all_galleries landing page that links to all the photo galleries
 - planning on writing Python code to auto-generate the gallery pages from photo folders
 
