@@ -86,7 +86,9 @@ h1, h2, h3, h4, h5,
     border: 2px solid #fff; }
     .btn.btn-outline-white:hover {
       background: #fff;
-      color: #ef6c57 !important; }
+      /* color: #ef6c57 !important;  */
+      color: gray !important; 
+    }
   .btn.btn-md {
     padding: 15px 30px;
     font-size: 12px;
@@ -138,7 +140,9 @@ h1, h2, h3, h4, h5,
     position: absolute;
     width: 100px;
     height: 3px;
-    background: #ef6c57; }
+    /* background: #ef6c57;  */
+    background: gray;
+  }
   .site-section-heading.text-center:after {
     content: "";
     -webkit-transform: translateX(-50%);
@@ -150,7 +154,9 @@ h1, h2, h3, h4, h5,
     position: absolute;
     width: 100px;
     height: 3px;
-    background: #ef6c57; }
+    /* background: #ef6c57;  */
+    background: gray;
+  }
 
 .border-top {
   border-top: 1px solid #edf0f5 !important; }
@@ -327,7 +333,8 @@ h1, h2, h3, h4, h5,
   .site-navbar .site-navigation .site-menu {
     margin-bottom: 0; }
     .site-navbar .site-navigation .site-menu .active > a {
-      color: #ef6c57;
+      /* color: #ef6c57; */
+      color: gray;
       display: inline-block;
       padding: 5px 20px; }
     .site-navbar .site-navigation .site-menu a {
@@ -341,7 +348,9 @@ h1, h2, h3, h4, h5,
         display: inline-block;
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: #ef6c57; }
+          /* color: #ef6c57;  */
+          color: gray;
+        }
     .site-navbar .site-navigation .site-menu .has-children {
       position: relative; }
       .site-navbar .site-navigation .site-menu .has-children > a {
@@ -365,7 +374,8 @@ h1, h2, h3, h4, h5,
         top: 100%;
         position: absolute;
         text-align: left;
-        border-top: 2px solid #ef6c57;
+        /* border-top: 2px solid #ef6c57; */
+        border-top: 2px solid gray;
         -webkit-box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
         box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
         border-left: 1px solid #edf0f5;
@@ -402,7 +412,9 @@ h1, h2, h3, h4, h5,
           transition: 0s all;
           color: #343a40; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown .active > a {
-          color: #ef6c57 !important; }
+          /* color: #ef6c57 !important; */
+          color: gray !important;
+         }
         .site-navbar .site-navigation .site-menu .has-children .dropdown > li {
           list-style: none;
           padding: 0;
@@ -424,7 +436,9 @@ h1, h2, h3, h4, h5,
             background: #f4f5f9;
             color: #25262a; }
       .site-navbar .site-navigation .site-menu .has-children:hover > a, .site-navbar .site-navigation .site-menu .has-children:focus > a, .site-navbar .site-navigation .site-menu .has-children:active > a {
-        color: #ef6c57; }
+        /* color: #ef6c57;  */
+        color: gray;
+      }
       .site-navbar .site-navigation .site-menu .has-children:hover, .site-navbar .site-navigation .site-menu .has-children:focus, .site-navbar .site-navigation .site-menu .has-children:active {
         cursor: pointer; }
         .site-navbar .site-navigation .site-menu .has-children:hover > .dropdown, .site-navbar .site-navigation .site-menu .has-children:focus > .dropdown, .site-navbar .site-navigation .site-menu .has-children:active > .dropdown {
@@ -504,12 +518,16 @@ h1, h2, h3, h4, h5,
       position: relative;
       color: #212529; }
       .site-mobile-menu .site-nav-wrap a:hover {
-        color: #ef6c57; }
+        /* color: #ef6c57;  */
+        color: gray;
+      }
     .site-mobile-menu .site-nav-wrap li {
       position: relative;
       display: block; }
       .site-mobile-menu .site-nav-wrap li.active > a {
-        color: #ef6c57; }
+        /* color: #ef6c57;  */
+        color: gray;
+      }
     .site-mobile-menu .site-nav-wrap .arrow-collapse {
       position: absolute;
       right: 0px;
@@ -635,7 +653,9 @@ h1, h2, h3, h4, h5,
           .header-bar ul li a {
             padding: 4px 10px; } }
       .header-bar ul li.active a {
-        color: #ef6c57; }
+        /* color: #ef6c57;  */
+        color: gray;
+      }
     .header-bar ul.social li {
       display: inline-block; }
       .header-bar ul.social li a {
@@ -760,5 +780,6 @@ h1, h2, h3, h4, h5,
   .custom-pagination a {
     border-radius: 50%; }
     .custom-pagination a:hover {
-      background: #ef6c57;
+      /* background: #ef6c57; */
+      color: gray;
       color: #fff; }
