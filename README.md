@@ -7,8 +7,8 @@ Static website for Scotch'n'Soda Theatre
 The current static site at snstheatre.org
 
 ### style-edits
-- Darkened the font
-- Reverted col-8 column width back to original and use col-12 class for full-width images
+- (merged) Darkened the font
+- (merged) Reverted col-8 column width back to original and use col-12 class for full-width images
 - Planning on editing structure of Get Involved / Subtroupes pages
 
 ### roles-documentation
