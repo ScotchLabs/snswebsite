@@ -13,3 +13,6 @@ The current static site at snstheatre.org
 
 ### roles-documentation
 Working on a new page that will include all the show roles documentation (director, PM, SM, MD).
+
+## Other Notes
+- When editing: sometimes a page will look the same even after editing. If this happens, clear the browser cache and reload the site and the updates will show up.
