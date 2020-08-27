@@ -1,0 +1,35 @@
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-md-12 text-center py-5">
+    <p>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  &copy; Scotch'n'Soda Theatre | Design: <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+  </div>
+</div>
+</div>
+</main>
+
+</div> <!-- .site-wrap -->
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/aos.js"></script>
+
+<script src="js/jquery.fancybox.min.js"></script>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
