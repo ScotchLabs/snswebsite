@@ -27,7 +27,9 @@ def get_image_data(file_paths):
         if rel_match:
             rel_path = rel_match.group(0)
         if full_match:
-            full_path = full_match.group(0)    
+            full_path = full_match.group(0)
+        if '._' in rel_path:
+            continue    
         with Image.open(full_path) as img:
             dimens = img.size
         images.append((rel_path, dimens))
@@ -68,8 +70,8 @@ def add_photos(outfile_name, images):
                 </div>''')
 
 
-ext = 'images/LesMisResized'
-output_fname = os.path.dirname(__file__) + '/lesmis_gallery.html'
+ext = 'images/201912_summerland'
+output_fname = os.path.dirname(__file__) + '/201912-summerland.html'
 file_paths = get_img_names(ext)
 # print(file_paths)
 images = get_image_data(file_paths)
