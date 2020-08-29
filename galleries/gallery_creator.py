@@ -70,8 +70,8 @@ def add_photos(outfile_name, images):
                 </div>''')
 
 
-ext = 'images/201912_summerland'
-output_fname = os.path.dirname(__file__) + '/201912-summerland.html'
+ext = 'images/201910_catchme'
+output_fname = os.path.dirname(__file__) + '/201910-catchme.html'
 file_paths = get_img_names(ext)
 # print(file_paths)
 images = get_image_data(file_paths)
