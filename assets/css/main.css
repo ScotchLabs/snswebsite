@@ -171,6 +171,11 @@ input, select, textarea {
 		letter-spacing: 0.025em;
 	}
 
+	h6 {
+		font-size: 1em;
+		letter-spacing: 0.025em;
+	}
+
 	sub {
 		font-size: 0.8em;
 		position: relative;
