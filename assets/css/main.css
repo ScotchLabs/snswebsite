@@ -2778,52 +2778,42 @@ input, select, textarea {
 		}
 
 		#banner .slide.slide1 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/tlm_1.JPG");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/1.JPG");
 			background-position: bottom left, bottom right, top left, 90% center;
 		}
 
 		#banner .slide.slide2 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/carrie.JPG");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/2.JPG");
 			background-position: bottom left, bottom right, top left, top center;
 		}
 
 		#banner .slide.slide3 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/dodj.JPG");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/3.JPG");
 			background-position: bottom left, bottom right, top left, 82% center;
 		}
 
 		#banner .slide.slide4 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/9to5_2.JPG");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/4.JPG");
 			background-position: bottom left, bottom right, top left, 75% center;
 		}
 
 		#banner .slide.slide5 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/somethingrotten_2.JPG");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/5.JPG");
 			background-position: bottom left, bottom right, top left, bottom center;
 		}
 
 		#banner .slide.slide6 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/9to5_3.JPG");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/6.JPG");
 			background-position: bottom left, bottom right, top left, 90% center;
 		}
 
 		#banner .slide.slide7 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/tlm_2.JPG");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/7.JPG");
 			background-position: bottom left, bottom right, top left, 90% center;
 		}
 
 		#banner .slide.slide8 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/somethingrotten_3.JPG");
-			background-position: bottom left, bottom right, top left, 90% center;
-		}
-
-		#banner .slide.slide9 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/somethingrotten_1.JPG");
-			background-position: bottom left, bottom right, top left, 90% center;
-		}
-
-		#banner .slide.slide10 {
-			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/9to5_1.JPG");
+			background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/slideshow/8.JPG");
 			background-position: bottom left, bottom right, top left, 90% center;
 		}
 
