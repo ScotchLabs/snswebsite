@@ -87,7 +87,6 @@ def photo_html(rel_path, size, delay):
 
 
 def gallery_card(slug, title, date_text, cover_src, blurb):
-    # same markup as the existing cards on all_galleries.html
     blurb_html = f'\n                                        <p>{html.escape(blurb)}</p>' if blurb else ''
     return f'''                                <div class="col-4 col-12-narrower">
                                     <section>
@@ -175,7 +174,6 @@ def main():
     print(f'{len(photos)} photos ({converted} converted to JPG) -> {image_dir}')
     print(f'page -> {page}')
 
-    # the first photo (alphabetically) is the cover on the all_galleries card
     cover_src = f'galleries/{photos[0][0]}'
     card = gallery_card(slug, title, args.date or year, cover_src, args.blurb)
     add_gallery_card(slug, card)
