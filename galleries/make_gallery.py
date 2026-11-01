@@ -7,6 +7,8 @@
 # - converts anything that isn't a JPG to .jpg
 # - copies the photos to galleries/images/<slug>/
 # - writes galleries/<slug>.html using topfile.txt and bottomfile.txt
+# - adds a card for the new gallery at the top of the grid in all_galleries.html
+#   (skipped if a card linking to the page already exists)
 
 import argparse
 import html
@@ -18,6 +20,8 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 GALLERIES = Path(__file__).resolve().parent
+ALL_GALLERIES = GALLERIES.parent / 'all_galleries.html'
+GRID_START = '<div class="row gtr-150">'
 
 
 def slugify(text):
@@ -82,10 +86,42 @@ def photo_html(rel_path, size, delay):
 '''
 
 
+def gallery_card(slug, title, date_text, cover_src, blurb):
+    # same markup as the existing cards on all_galleries.html
+    blurb_html = f'\n                                        <p>{html.escape(blurb)}</p>' if blurb else ''
+    return f'''                                <div class="col-4 col-12-narrower">
+                                    <section>
+                                        <a href="galleries/{slug}" class="image featured"><img src="{cover_src}" alt="" /></a>
+                                        <header>
+                                            <h3>
+                                                <strong><a href="galleries/{slug}">{html.escape(title)}</a></strong>
+                                                <br>{html.escape(date_text)}
+                                            </h3>
+                                        </header>{blurb_html}
+                                    </section>
+                                </div>
+'''
+
+
+def add_gallery_card(slug, card):
+    text = ALL_GALLERIES.read_text()
+    if f'href="galleries/{slug}"' in text:
+        print(f'{ALL_GALLERIES.name} already links to galleries/{slug}; card not added')
+        return
+    if text.count(GRID_START) != 1:
+        sys.exit(f'Expected exactly one "{GRID_START}" in {ALL_GALLERIES.name}; card not added.')
+    pos = text.index(GRID_START) + len(GRID_START)
+    text = text[:pos] + '\n' + card.rstrip('\n') + text[pos:]
+    ALL_GALLERIES.write_text(text)
+    print(f'card -> {ALL_GALLERIES}')
+
+
 def main():
     parser = argparse.ArgumentParser(description='Build a gallery page from a folder named "Show Name (year)".')
     parser.add_argument('folder', type=Path, help='folder containing the photos, named "Show Name (year)"')
     parser.add_argument('--slug', help='page name, e.g. 201910-showname (default: year and show name)')
+    parser.add_argument('--date', help='date shown on the all_galleries card, e.g. "February 2020" (default: the year)')
+    parser.add_argument('--blurb', default='', help='description shown on the all_galleries card (optional)')
     args = parser.parse_args()
 
     if not args.folder.is_dir():
@@ -138,6 +174,11 @@ def main():
 
     print(f'{len(photos)} photos ({converted} converted to JPG) -> {image_dir}')
     print(f'page -> {page}')
+
+    # the first photo (alphabetically) is the cover on the all_galleries card
+    cover_src = f'galleries/{photos[0][0]}'
+    card = gallery_card(slug, title, args.date or year, cover_src, args.blurb)
+    add_gallery_card(slug, card)
 
 
 if __name__ == '__main__':
