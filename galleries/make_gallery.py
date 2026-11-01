@@ -1,0 +1,144 @@
+# Build a gallery page from a folder of photos.
+#
+# usage: python3 make_gallery.py "<photo folder>"   (folder named "Show Name (year)")
+#
+# - the show name and year come from the folder name
+# - checks that every file in the folder is a readable image
+# - converts anything that isn't a JPG to .jpg
+# - copies the photos to galleries/images/<slug>/
+# - writes galleries/<slug>.html using topfile.txt and bottomfile.txt
+
+import argparse
+import html
+import re
+import shutil
+import sys
+from pathlib import Path
+
+from PIL import Image, ImageOps
+
+GALLERIES = Path(__file__).resolve().parent
+
+
+def slugify(text):
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
+
+
+def parse_folder_name(name):
+    match = re.fullmatch(r'(.+?)\s*\((\d{4})\)', name)
+    if not match:
+        return None
+    return match.group(1).strip(), match.group(2)
+
+
+def check_photos(sources):
+    bad = []
+    for src in sources:
+        try:
+            with Image.open(src) as img:
+                img.verify()
+        except OSError:
+            bad.append(src.name)
+    return bad
+
+
+def to_jpg(src, image_dir):
+    dest = image_dir / (src.stem + '.jpg')
+    with Image.open(src) as img:
+        is_jpeg = img.format == 'JPEG'
+        if is_jpeg:
+            shutil.copy2(src, dest)    
+            size = ImageOps.exif_transpose(img).size
+            return dest.name, size, False
+        img = ImageOps.exif_transpose(img)
+        if img.mode in ('RGBA', 'LA', 'P'):
+            img = img.convert('RGBA')
+            background = Image.new('RGB', img.size, 'white')
+            background.paste(img, mask=img.split()[-1])
+            img = background
+        else:
+            img = img.convert('RGB')
+        img.save(dest, 'JPEG', quality=92)
+        return dest.name, img.size, True
+
+
+def photo_html(rel_path, size, delay):
+    width, height = size
+    ratio = width / height
+    if ratio <= .75:   
+        size_class = 'col-lg-3'
+    elif ratio > 1.25:  
+        size_class = 'col-lg-6'
+    else:              
+        size_class = 'col-lg-4'
+    return f'''        <div class="col-6 col-md-6 {size_class}" data-aos="fade-up" data-aos-delay="{delay}">
+          <a href="{rel_path}" class="d-block photo-item" data-fancybox="gallery">
+            <img src="{rel_path}" alt="Image" class="img-fluid">
+            <div class="photo-text-more">
+              <span class="icon icon-search"></span>
+            </div>
+          </a>
+        </div>
+'''
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Build a gallery page from a folder named "Show Name (year)".')
+    parser.add_argument('folder', type=Path, help='folder containing the photos, named "Show Name (year)"')
+    parser.add_argument('--slug', help='page name, e.g. 201910-showname (default: year and show name)')
+    args = parser.parse_args()
+
+    if not args.folder.is_dir():
+        parser.error(f'{args.folder} is not a folder')
+
+    parsed = parse_folder_name(args.folder.resolve().name)
+    if not parsed:
+        parser.error(f'folder must be named "Show Name (year)", got "{args.folder.name}"')
+    title, year = parsed
+
+    slug = args.slug or f'{year}-{slugify(title)}'
+    page = GALLERIES / f'{slug}.html'
+    image_dir = GALLERIES / 'images' / slug.replace('-', '_')
+    if page.exists() or image_dir.exists():
+        parser.error(f'{page.name} or {image_dir.name} already exists; pick another --slug')
+
+    sources = sorted(p for p in args.folder.iterdir() if p.is_file() and not p.name.startswith('.'))
+    if not sources:
+        parser.error(f'no photos found in {args.folder}')
+
+    bad = check_photos(sources)
+    if bad:
+        sys.exit('These files are not readable images, so nothing was built:\n  ' + '\n  '.join(bad))
+
+    jpg_names = [src.stem + '.jpg' for src in sources]
+    if len(set(jpg_names)) != len(jpg_names):
+        sys.exit('Two photos would get the same .jpg name (for example IMG.png and IMG.jpg); rename one and try again.')
+
+    image_dir.mkdir(parents=True)
+    photos = []
+    converted = 0
+    for src in sources:
+        name, size, was_converted = to_jpg(src, image_dir)
+        converted += was_converted
+        photos.append((f'images/{image_dir.name}/{name}', size))
+
+    top = (GALLERIES / 'topfile.txt').read_text()
+    top = top.replace('<title>Gallery</title>', f'<title>{html.escape(title)} | Scotch\'n\'Soda Theatre</title>')
+    top = top.replace('<h2 class="text-white mb-4">SHOW NAME HERE</h2>',
+                      f'<h2 class="text-white mb-4">{html.escape(title)}</h2>\n'
+                      f'          <p class="text-white">{year}</p>')
+    bottom = (GALLERIES / 'bottomfile.txt').read_text()
+
+    with open(page, 'w') as f:
+        f.write(top + '\n')
+        for i, (rel_path, size) in enumerate(photos):
+            # delays cycle 0, 100, 200 so neighboring photos fade in one after another
+            f.write(photo_html(rel_path, size, (i % 3) * 100))
+        f.write(bottom)
+
+    print(f'{len(photos)} photos ({converted} converted to JPG) -> {image_dir}')
+    print(f'page -> {page}')
+
+
+if __name__ == '__main__':
+    main()
