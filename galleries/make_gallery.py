@@ -1,8 +1,9 @@
 # Build a gallery page from a folder of photos.
 #
-# usage: python3 make_gallery.py "<photo folder>"   (folder named "Show Name (year)")
+# usage: python3 make_gallery.py "<photo folder>"   (folder named "Show Name (month year)")
 #
-# - the show name and year come from the folder name
+# - the show name, month (optional) and year come from the folder name,
+#   e.g. "Eurydice (February 2022)" or "Eurydice (2022)"
 # - checks that every file in the folder is a readable image
 # - converts anything that isn't a JPG to .jpg
 # - copies the photos to galleries/images/<slug>/
@@ -11,6 +12,7 @@
 #   (skipped if a card linking to the page already exists)
 
 import argparse
+import calendar
 import html
 import re
 import shutil
@@ -23,16 +25,34 @@ GALLERIES = Path(__file__).resolve().parent
 ALL_GALLERIES = GALLERIES.parent / 'all_galleries.html'
 GRID_START = '<div class="row gtr-150">'
 
+MONTHS = {name.lower(): name for name in calendar.month_name[1:]}
+MONTHS.update({name.lower(): full for name, full in zip(calendar.month_abbr[1:], calendar.month_name[1:])})
+
 
 def slugify(text):
     return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
 
 
 def parse_folder_name(name):
-    match = re.fullmatch(r'(.+?)\s*\((\d{4})\)', name)
+    """Return (title, year, month) from "Show Name (month year)" or "Show Name (year)".
+
+    month is the full month name (e.g. "February") or None when the folder has no month.
+    Returns None if the name doesn't match either form.
+    """
+    match = re.fullmatch(r'(.+?)\s*\((?:([A-Za-z]+)\s+)?(\d{4})\)', name)
     if not match:
         return None
-    return match.group(1).strip(), match.group(2)
+    title, month_word, year = match.group(1).strip(), match.group(2), match.group(3)
+    if month_word is None:
+        return title, year, None
+    month = MONTHS.get(month_word.lower())
+    if month is None:
+        return None
+    return title, year, month
+
+
+def date_text(year, month):
+    return f'{month} {year}' if month else year
 
 
 def check_photos(sources):
@@ -116,10 +136,10 @@ def add_gallery_card(slug, card):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Build a gallery page from a folder named "Show Name (year)".')
-    parser.add_argument('folder', type=Path, help='folder containing the photos, named "Show Name (year)"')
+    parser = argparse.ArgumentParser(description='Build a gallery page from a folder named "Show Name (month year)".')
+    parser.add_argument('folder', type=Path, help='folder containing the photos, named "Show Name (month year)"')
     parser.add_argument('--slug', help='page name, e.g. 201910-showname (default: year and show name)')
-    parser.add_argument('--date', help='date shown on the all_galleries card, e.g. "February 2020" (default: the year)')
+    parser.add_argument('--date', help='date shown on the all_galleries card and the page, e.g. "February 2020" (default: month and year from the folder name)')
     parser.add_argument('--blurb', default='', help='description shown on the all_galleries card (optional)')
     args = parser.parse_args()
 
@@ -128,8 +148,9 @@ def main():
 
     parsed = parse_folder_name(args.folder.resolve().name)
     if not parsed:
-        parser.error(f'folder must be named "Show Name (year)", got "{args.folder.name}"')
-    title, year = parsed
+        parser.error(f'folder must be named "Show Name (month year)" or "Show Name (year)", got "{args.folder.name}"')
+    title, year, month = parsed
+    shown_date = args.date or date_text(year, month)
 
     slug = args.slug or f'{year}-{slugify(title)}'
     page = GALLERIES / f'{slug}.html'
@@ -161,7 +182,7 @@ def main():
     top = top.replace('<title>Gallery</title>', f'<title>{html.escape(title)} | Scotch\'n\'Soda Theatre</title>')
     top = top.replace('<h2 class="text-white mb-4">SHOW NAME HERE</h2>',
                       f'<h2 class="text-white mb-4">{html.escape(title)}</h2>\n'
-                      f'          <p class="text-white">{year}</p>')
+                      f'          <p class="text-white">{html.escape(shown_date)}</p>')
     bottom = (GALLERIES / 'bottomfile.txt').read_text()
 
     with open(page, 'w') as f:
@@ -175,7 +196,7 @@ def main():
     print(f'page -> {page}')
 
     cover_src = f'galleries/{photos[0][0]}'
-    card = gallery_card(slug, title, args.date or year, cover_src, args.blurb)
+    card = gallery_card(slug, title, shown_date, cover_src, args.blurb)
     add_gallery_card(slug, card)
 
 
