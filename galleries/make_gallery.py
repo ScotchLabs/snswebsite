@@ -15,7 +15,6 @@ import argparse
 import calendar
 import html
 import re
-import shutil
 import sys
 from pathlib import Path
 
@@ -24,6 +23,10 @@ from PIL import Image, ImageOps
 GALLERIES = Path(__file__).resolve().parent
 ALL_GALLERIES = GALLERIES.parent / 'all_galleries.html'
 GRID_START = '<div class="row gtr-150">'
+
+# web-size settings for every photo copied into a gallery (matches the existing site images)
+MAX_EDGE = 1600   # longest side, in pixels
+QUALITY = 80      # JPEG quality
 
 MONTHS = {name.lower(): name for name in calendar.month_name[1:]}
 MONTHS.update({name.lower(): full for name, full in zip(calendar.month_abbr[1:], calendar.month_name[1:])})
@@ -67,14 +70,16 @@ def check_photos(sources):
 
 
 def to_jpg(src, image_dir):
+    """Write a web-sized JPG copy of src into image_dir.
+
+    Every photo is resized so its longest side is at most MAX_EDGE, re-encoded at
+    QUALITY, and saved without EXIF data (so GPS locations are not published).
+    Returns (file name, final size, whether the source was not already a JPEG).
+    """
     dest = image_dir / (src.stem + '.jpg')
     with Image.open(src) as img:
-        is_jpeg = img.format == 'JPEG'
-        if is_jpeg:
-            shutil.copy2(src, dest)    
-            size = ImageOps.exif_transpose(img).size
-            return dest.name, size, False
-        img = ImageOps.exif_transpose(img)
+        was_converted = img.format != 'JPEG'
+        img = ImageOps.exif_transpose(img)  # apply camera rotation before resizing
         if img.mode in ('RGBA', 'LA', 'P'):
             img = img.convert('RGBA')
             background = Image.new('RGB', img.size, 'white')
@@ -82,8 +87,9 @@ def to_jpg(src, image_dir):
             img = background
         else:
             img = img.convert('RGB')
-        img.save(dest, 'JPEG', quality=92)
-        return dest.name, img.size, True
+        img.thumbnail((MAX_EDGE, MAX_EDGE), Image.LANCZOS)  # only shrinks, keeps aspect ratio
+        img.save(dest, 'JPEG', quality=QUALITY, optimize=True, progressive=True)
+        return dest.name, img.size, was_converted
 
 
 def photo_html(rel_path, size, delay):
