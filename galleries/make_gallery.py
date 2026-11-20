@@ -73,7 +73,7 @@ def s3_prefix_has_objects(prefix):
     """True if anything already exists under s3://BUCKET/<prefix>/ (so we never overwrite a gallery)."""
     result = subprocess.run(['aws', 's3', 'ls', f's3://{BUCKET}/{prefix}/'],
                             capture_output=True, text=True)
-    if result.returncode != 0:
+    if result.returncode != 0 and result.stderr.strip():
         sys.exit(f'aws s3 ls failed (are you logged in with `aws login`?):\n{result.stderr}')
     return bool(result.stdout.strip())
 

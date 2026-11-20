@@ -17,3 +17,4 @@ from static.snstheatre.org. galleries/images/ is no longer tracked, so don't upl
 
 ## Other Notes
 - When editing: sometimes a page will look the same even after editing. If this happens, clear the browser cache and reload the site and the updates will show up.
+- Use `npx serve -l 5500` (or any other port number) to run locally (the serve.json has cleanUrls set up, which other servers may not directly support)
