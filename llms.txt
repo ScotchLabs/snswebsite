@@ -1,0 +1,11 @@
+# Scotch'n'Soda Theatre
+> Scotch'n'Soda Theatre is one of the nation's oldest student theater groups, and is one of the oldest and largest student organizations at Carnegie Mellon University. 
+
+## Current Season
+- [Shows](https://www.snstheatre.org/season): Description of our current season of shows
+
+## Learn More
+- [About](https://www.snstheatre.org/about): Learn more details about the organizations and its various subgroups
+
+## Get Involved
+- [Getting involved](https://www.snstheatre.org/getinvolved): Ways that someone at Carnegie Mellon can get involved with Scotch'n'Soda

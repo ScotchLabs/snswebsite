@@ -1,5 +1,2 @@
 User-agent: *
-
 Disallow: /cdn-cgi/
-
-Sitemap: https://yoursite.com/sitemap.xml
