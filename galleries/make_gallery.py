@@ -225,7 +225,7 @@ def photo_html(rel_path, size, delay):
         size_class = 'col-lg-4'
     return f'''        <div class="col-6 col-md-6 {size_class}" data-aos="fade-up" data-aos-delay="{delay}">
           <a href="{rel_path}" class="d-block photo-item" data-fancybox="gallery">
-            <img src="{rel_path}" alt="Image" class="img-fluid">
+            <img loading="lazy" src="{rel_path}" alt="Image" class="img-fluid">
             <div class="photo-text-more">
               <span class="icon icon-search"></span>
             </div>
@@ -238,7 +238,7 @@ def gallery_card(slug, title, date_text, cover_src, blurb):
     blurb_html = f'\n                                        <p>{html.escape(blurb)}</p>' if blurb else ''
     return f'''                                <div class="col-4 col-12-narrower">
                                     <section>
-                                        <a href="galleries/{slug}" class="image featured"><img src="{cover_src}" alt="" /></a>
+                                        <a href="galleries/{slug}" class="image featured"><img loading="lazy" src="{cover_src}" alt="" /></a>
                                         <header>
                                             <h3>
                                                 <strong><a href="galleries/{slug}">{html.escape(title)}</a></strong>
